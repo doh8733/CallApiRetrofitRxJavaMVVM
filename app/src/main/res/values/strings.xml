@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CallApiRetrofitRxJavaMVVM</string>
+    <string name="login_success">Login success</string>
+</resources>
