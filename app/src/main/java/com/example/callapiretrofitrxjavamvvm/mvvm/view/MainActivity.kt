@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             viewmodel.listUser.observe(this){
                 Log.e("TAG", "onCreate: $it", )
                 tvUser.text = "$it"
+                for(i in it){
+                    if(id.equals(i.id.toString(),true) && idUser.equals(i.userId.toString(),true)){
+                            isHashUser = true
+                    }
+                }
                 if (isHashUser){
                     Toast.makeText(this@MainActivity, R.string.login_success, Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity2::class.java))
