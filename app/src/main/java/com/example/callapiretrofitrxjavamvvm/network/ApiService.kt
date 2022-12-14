@@ -1,5 +1,6 @@
-package com.example.callapiretrofitrxjavamvvm
+package com.example.callapiretrofitrxjavamvvm.network
 
+import com.example.callapiretrofitrxjavamvvm.mvvm.model.UsersItem
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package com.example.callapiretrofitrxjavamvvm
+package com.example.callapiretrofitrxjavamvvm.mvvm.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,8 +9,11 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.callapiretrofitrxjavamvvm.UserRepository.UserRepository
-import com.example.callapiretrofitrxjavamvvm.viewmodel.UserViewModel
+import com.example.callapiretrofitrxjavamvvm.R
+import com.example.callapiretrofitrxjavamvvm.network.RetrofitClient
+import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserRepository.UserRepository
+import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserViewModel
+import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.factory.UserViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private val edtIdUser: EditText by lazy { findViewById<EditText>(R.id.edtIdUser) }
@@ -20,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private val viewmodel: UserViewModel by lazy {
         ViewModelProvider(
-            this, UserViewModel.UserViewModelFactory(
+            this, UserViewModelFactory(
                 UserRepository(RetrofitClient)
             )
         )[UserViewModel::class.java]
@@ -38,14 +41,9 @@ class MainActivity : AppCompatActivity() {
             viewmodel.listUser.observe(this){
                 Log.e("TAG", "onCreate: $it", )
                 tvUser.text = "$it"
-                for (i in it){
-                    if (id.equals(i.id.toString(),true) && idUser.equals(i.userId.toString(),true)){
-                        isHashUser = true
-                    }
-                }
                 if (isHashUser){
                     Toast.makeText(this@MainActivity, R.string.login_success, Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this,MainActivity2::class.java))
+                    startActivity(Intent(this, MainActivity2::class.java))
                 }
             }
         }
