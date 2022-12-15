@@ -1,4 +1,4 @@
-package com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserRepository
+package com.example.callapiretrofitrxjavamvvm.mvvm.model.UserRepository
 
 import com.example.callapiretrofitrxjavamvvm.network.RetrofitClient
 

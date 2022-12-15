@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.callapiretrofitrxjavamvvm.R
 import com.example.callapiretrofitrxjavamvvm.network.RetrofitClient
-import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserRepository.UserRepository
+import com.example.callapiretrofitrxjavamvvm.mvvm.model.UserRepository.UserRepository
 import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserViewModel
 import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.factory.UserViewModelFactory
 

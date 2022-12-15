@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.callapiretrofitrxjavamvvm.mvvm.viewmodel.UserRepository.UserRepository
+import com.example.callapiretrofitrxjavamvvm.mvvm.model.UserRepository.UserRepository
 import com.example.callapiretrofitrxjavamvvm.mvvm.model.UsersItem
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
@@ -14,7 +14,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class UserViewModel(private val userRepository: UserRepository) :ViewModel() {
      val listUser = MutableLiveData<List<UsersItem>>()
-    private lateinit var disposable:Disposable
+     lateinit var disposable:Disposable
 
      fun getAllUser(){
         val response = userRepository.getAllUsers()
